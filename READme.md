@@ -9,7 +9,7 @@ This is a simple order form created using HTML, CSS, and JavaScript. It is desig
     <li>Capitalization of first and last names as they are entered</li> 
     <li>Phone number and Zip Code fields that accept numeric input only</li>
     <li>Dropdown menus for selecting state, district, and city</li>
-    <li>Validation functions for name, phone number, and Zip Code fields<li>
+    <li>Validation functions for name, phone number, and Zip Code fields</li>
 </ui>
 
 <h1>Usage</h1>
@@ -18,5 +18,5 @@ This is a simple order form created using HTML, CSS, and JavaScript. It is desig
     <li>The first and last name fields will automatically capitalize as you type.</li>
     <li>The phone number and Zip Code fields will only accept numeric input.</li>
     <li>Select your state, district, and city from the dropdown menus.</li>
-    <li>Once all required fields are filled out, press the 'Submit' button to validate and submit the form.<li>
+    <li>Once all required fields are filled out, press the 'Submit' button to validate and submit the form.</li>
 </ui>
