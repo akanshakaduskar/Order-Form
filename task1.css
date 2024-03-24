@@ -1,0 +1,144 @@
+#orderform
+{
+    background-color:dodgerblue;
+    font-size: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-weight: 70;
+    margin-top: -10px;
+    margin-left: -6px;
+    margin-bottom: 15px;
+}
+
+#orderdetail
+{
+    margin-bottom: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+
+}
+#Shipping_Address
+{
+    background-color: dodgerblue;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-weight: 70;
+    /* margin-top: -9px; */
+    margin-left: -6px;
+    margin-bottom: 15px;
+}
+
+#first{
+    display: flex;
+}
+.name::after
+{
+content: " *";
+color: red;
+}
+.part1
+{
+    width: 30%;
+}
+#email::after
+{
+    content: " *";
+    color: red;
+}
+#addressline1::after
+{
+    content: " *";
+    color: red;
+}
+#addressline
+{
+    display: flex;
+}
+.address
+{
+    width: 30%;
+}
+#state::after
+{
+    content: " *";
+    color: red;
+}
+#city::after
+{
+    content: " *";
+    color: red;
+}
+#place
+{
+    display: flex;
+}
+.area
+{
+    width: 30%;
+}
+#district::after
+{
+    content: " *";
+    color: red;
+}
+#zip
+{
+    display: flex;
+}
+.ziparea
+{
+    width: 30%;
+}
+#zipcode::after
+{
+    content: " *";
+    color: red;
+}
+#phno::after
+{
+    content: " *";
+    color: red;
+}
+#submit
+{
+    font-size: 15px;
+    margin-left: 15px;
+}
+.formbox
+{
+    margin-left: 15px;
+    border: 0.5px solid black;
+    border-radius: 7px;
+}
+#buttons
+{
+    display: flex;
+}
+#submit
+{
+border-radius: 7px;
+border: 0.5px solid black;
+}
+#submit:hover
+{
+    font-size: large;
+    background-color: dodgerblue;
+    color: white;
+}
+#reset
+{
+    margin-left: 40px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 7px;
+    font-size: 20px;
+    border: 0.5px solid black;
+}
+#reset:hover
+{
+    font-size: large;
+    background-color:azure;
+    color: black;
+    font-weight: 10;
+}

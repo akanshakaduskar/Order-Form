@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order Form</title>
+        <link rel="stylesheet" href="task1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="task1.js"></script> -->
+        <script>
+            
+
+ $(document).ready(function () {
+    var res = '';
+            $('.textinput').each(function(){
+                $('#submit').click(function(){
+                        res += "<br/>"+ $(this).val();
+                    });
+                    $('#divres').html(res);
+      });
+       
+    });   
+
+
+$(function(){
+   $("input[name='ph']").on('input', function (e) {
+       $(this).val($(this).val().replace(/[^0-9]/g, ''));
+   });
+   $("input[name='zip']").on('input', function (e) {
+       $(this).val($(this).val().replace(/[^0-9]/g, ''));
+   });
+});
+
+$(document).ready(function()  {
+   $("#firstNameInput").keyup(function()  {
+     $("#firstNameInput").css("textTransform", "capitalize");
+   });
+   $("#lastNameInput").keyup(function()  {
+     $("#lastNameInput").css("textTransform", "capitalize");
+   });
+})
+
+
+
+
+
+var statecity = {
+   "Telangana": {
+   
+     "Karimnagar": ["karimpet", "karimganj", "kerapet", "pedapet"],
+     
+     "Hyderabad": ["Madhapur", "HiTech City", "Gachibowli", "Kondapur"],
+     
+     "Warangal": ["Wadapet", "Javanagar", "CSSnagar", "JSnagar"]    
+   },
+   
+ 
+   "Andhra Pradesh": {
+     "Srikakulam": ["Srikakota", "Sirinagar", "Palasa"],
+     "East Godavari": ["Rajahmundry", "Dhawaleswaram", "Rajanagaram"],
+     "Kakinada": ["Surempalem","Peddapuram","Ragampeta"]
+   }
+ }
+ window.onload = function() {
+   var stateSel = document.getElementById("states");
+   var districtSel = document.getElementById("districts");
+   var citySel = document.getElementById("cities");
+   for (var x in statecity) {
+     stateSel.options[stateSel.options.length] = new Option(x, x);
+   }
+   
+   
+   stateSel.onchange = function() {
+  citySel.length = 1;
+  districtSel.length = 1;
+     for (var y in statecity[this.value]) {
+       districtSel.options[districtSel.options.length] = new Option(y, y);
+     }
+   }
+   
+   districtSel.onchange = function() {
+  citySel.length = 1;
+     var z = statecity[stateSel.value][this.value];
+     for (var i = 0; i < z.length; i++) {
+       citySel.options[citySel.options.length] = new Option(z[i], z[i]);
+     }
+   }
+ }
+
+
+
+
+
+
+//  function clearErrors(){
+//    errors = document.getElementsByClassName('formerror');
+//        for(let item of errors)
+//        {
+//            item.innerHTML = "";
+//        }
+// }
+// function seterror(id, error){
+//    element = document.getElementById(id);
+//    element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+// }
+// function validate(){
+// var returnval = true;
+// clearErrors();
+
+// var name = document.forms['form']["firstname"].value;
+// if (name.length<3){
+//    seterror("name", "*Length of name is too short");
+//    returnval = false;
+// }
+
+// if (name.length == 0){
+//    seterror("name", "*Length of name cannot be zero!");
+//    returnval = false;
+// }
+
+
+// var phone = document.forms['form']["ph"].value;
+// if (phone.length != 10){
+//    seterror("phone", "*Phone number should be of 10 digits!");
+//    returnval = false;
+// }
+// return returnval;
+// }
+
+
+
+ 
+            // $(function(){
+            //     $("input[name='zip']").on('input', function (e) {
+            //         $(this).val($(this).val().replace(/[^0-9]/g, ''));
+            //     });
+            // });
+                    
+        </script>
+
+
+    </head>
+    <header>
+        <div id="orderform">Order Form</div>
+        <div id="orderdetail">The following form contains the required fields to be filled by the consumer. Thereby the required 
+                             fields must be filled with all the validations.</div>
+        <div id="Shipping_Address">Shipping Address</div>
+    </header>
+    <body>
+        <div id="from">
+        <form id="mainform" name="form" onsubmit="return validate()">
+            <fieldset class="formbox"><br>
+            <div id="first">
+                <div class="part1">
+                 <div class="name" >First Name:</div>
+                    <input id="firstNameInput"  name="firstname" type="text" required="required"
+                    autofocus="autofocus" class="textinput"  minlength="4" maxlength="15" /><span class="formerror"></span>
+                </div>  
+                <div class="part1">
+                    <div class="name">Last Name:</div>
+                    <input id="lastNameInput" name="lastname" type="text" required="required"
+                    autofocus="autofocus" class="textinput" minlength="4" maxlength="15" /><br>
+                </div><br>
+            </div><br>
+            <div>
+                <div id="email">Email Address:</div>
+                <input type="email" name="Email" id="emailInput" class="textinput" required="required" />
+                <br>
+            </div><br>
+            <div id="addressline">
+                <div class="address">
+                    <div id="addressline1">Address Line 1:</div> 
+                    <textarea   rows="4" cols="30" class="textinput" required="required" required="required" ></textarea>
+                </div>  
+                <div class="address">
+                    <div id="addressline2">Address Line 2:  (Optional)</div>
+                    <textarea class="textinput"   rows="4" cols="30"></textarea>
+                </div>  <br>
+            </div>
+            <br><br>
+            <div id="place">
+                <div class="area">
+                    <div id="state">State: </div>
+                    <div class="center">
+                        <select  name="states" id="states" >
+                            <option value="" class="textinput" selected="selected">Please select a state name</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="area">
+                    <div id="district">District:</div>
+                    <select   name="districts" id="districts"    >
+                        <option value="" class="textinput" selected="selected">Please select the state first.</option>
+                    </select>
+                </div> <br>
+                <div class="area">
+                    <div id="city">City</div>
+                        <select   name="cities" id="cities"  >
+                            <option value="" class="textinput" selected="selected">Please select the district first.</option>
+                        </select>
+                </div> <br>
+                
+            </div><br><br>
+            <div id="zip">
+                <div class="ziparea">
+                    <div id="zipcode">Zip Code:</div>
+                    <input id="zips"  type="text" name="zip" class="textinput" onkeyup="myFunction()" required="required" minlength="6" maxlength="6"/>
+                    <span class="formerror"></span>
+                </div>
+                <div class="ziparea">
+                    <div id="phno">Phone Number:</div>
+                    <input type="text"  name="ph" class="textinput" required="required" minlength="10" maxlength="10"/><span class="formerror"></span>
+                </div><br>
+            </div><br>
+            <div>
+                <div id="addresstype">Address Type: </div>
+                <input type="radio" class="textinput"  name="id" id="id" value="Home">Home
+                <input type="radio" class="textinput" name="id" id="id" value="Work">Work
+            </div><br>
+
+            <div>
+                <div id="itemreq">Number of items:</div>
+                <input type="number" class="textinput" name="item" id="item" value="item" min="1" max="3"/><br>
+            </div><br>
+            
+        </fieldset><br>
+        <div id="buttons">
+            <input id="submit" type="submit"  placeholder="Submit"/><br>
+            <input id="reset" type="reset" placeholder="Reset"/>
+        </div>
+        <div id="divres"></div>
+        </form></div><br>
+        
+       
+    </body>
+</html>
