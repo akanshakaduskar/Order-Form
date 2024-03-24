@@ -1,8 +1,10 @@
 <h1>Order Form</h1>
 This is a simple order form created using HTML, CSS, and JavaScript. It is designed to collect shipping information from consumers, ensuring all required fields are filled out and validated.
 
+![snap_order_form](https://github.com/akanshakaduskar/Order-Form/assets/156501496/e03feb6d-9c9c-4c33-b34e-e7254633c80d)
+
 <h1>Features</h1>
-<oi>
+<oi type="1">
     <li>Order form with required fields for shipping information. </li>
     <li>Capitalization of first and last names as they are entered</li> 
     <li>Phone number and Zip Code fields that accept numeric input only</li>
